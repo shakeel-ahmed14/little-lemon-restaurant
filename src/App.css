@@ -1,38 +1,123 @@
-.App {
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 104px;
+  margin-right: 10px;
+}
+
+.nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.hero {
+  background-color: #495E57;
+  color: white;
+  flex: 1; /* Or adjust width if not using flexbox */
+  position: relative; /* Important for positioning the image */
+  z-index: 1; /* Ensure the box is behind the image */
+  padding: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  width: 50%;
+}
+
+.hero-image {
+  flex: 1; /* Or adjust width if not using flexbox */
+  position: relative; /* Needed for absolute positioning */
+}
+
+.hero-image img {
+  position: absolute;
+  top: -231px;
+  right: 14px;
+  z-index: 1;
+  border-radius: 10px;
+  width: 24%;
+  height: 371px;
+  object-fit: cover;
+}
+
+.reserve-button {
+  background-color: #F4CE14;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.specials {
+  padding: 40px;
+  padding-top: 91px;
+}
+
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.menu-button {
+  background-color: #F4CE14;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.special-item {
+  border: 1px solid #ddd;
+  padding: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.special-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.price {
+  color: #F4CE14;
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.order-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
 }
