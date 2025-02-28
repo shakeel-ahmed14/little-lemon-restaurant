@@ -121,3 +121,67 @@ body {
   width: 100%;
   padding: 5px;
 }
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    margin-top: 10px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    margin-right: 10px; /* Add some spacing between links */
+  }
+
+  .hero {
+    flex-direction: column; /* Stack content and image */
+    padding: 20px;
+  }
+
+  .hero-content,
+  .hero-image {
+    width: 100%; /* Take full width on smaller screens */
+  }
+
+  .hero-image img {
+    position: static; /* Remove absolute positioning */
+    width: 80%; /* Adjust image size */
+    height: auto;
+    max-height: 300px; /* Limit image height */
+    margin: 20px auto 0; /* Center image */
+    display: block;
+    top: auto; /* reset top */
+    right: auto; /* reset right */
+  }
+
+  .specials {
+    padding: 20px;
+    padding-top: 40px;
+  }
+
+  .specials-grid {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo img {
+    width: 80px;
+  }
+
+  .nav a {
+    font-size: 0.9em;
+  }
+
+  .hero-content h1 {
+    font-size: 2em;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5em;
+  }
+}
