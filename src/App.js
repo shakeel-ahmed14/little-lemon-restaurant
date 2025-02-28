@@ -5,6 +5,12 @@ import { createBrowserRouter, RouterProvider, Link } from 'react-router-dom';
 import Login from './components/Login';
 import About from './components/About';
 import Menu from './components/Menu';
+import Reservation from './components/Reservation';
+import OrderOnline from './components/OrderOnline';
+
+function ButtonLink({to, children}) {
+  return <Link to={to}>{children}</Link>;
+}
 
 function App() {
   const router = createBrowserRouter([
@@ -21,6 +27,14 @@ function App() {
       element: <Menu />,
     },
     {
+      path: "/reservations",
+      element: <Reservation />,
+    },
+    {
+      path: "/orderonline",
+      element: <OrderOnline />,
+    },
+    {
       path: "/", // Add a default route for the main page
       element: (
         <>
@@ -34,7 +48,8 @@ function App() {
             <nav className="nav">
               <Link to="/">Home</Link>
               <Link to="/about">About</Link>
-              <Link to="/menu">Menu</Link>
+              <Link to="/orderonline">OrderOnline</Link>
+              <Link to="/reservations">Reservations</Link>
               <Link to="/login">Login</Link>
             </nav>
           </header>
@@ -47,7 +62,8 @@ function App() {
                 We are a family owned Mediterranean restaurant, focused on
                 traditional recipes served with a modern twist.
               </p>
-              <button className="reserve-button">Reserve a Table</button>
+              {/* <button className="reserve-button">Reserve a Table</button> */}
+              <ButtonLink className="reserve-button" to="/reservations">Reserve a table</ButtonLink>
             </div>
             <div className="hero-image">
               <img src="./restauranfood.jpg" alt="A person holding a plate of food" />
@@ -57,7 +73,7 @@ function App() {
           <section className="specials">
             <div className="specials-header">
               <h2>This weeks specials!</h2>
-              <button className="menu-button">Online Menu</button>
+              <ButtonLink className="menu-button" to="/orderonline">Online Menu</ButtonLink>
             </div>
             <div className="specials-grid">
               <div className="special-item">
@@ -69,9 +85,9 @@ function App() {
                   our Chicago style feta cheese, garnished with crunchy garlic
                   and rosemary croutons.
                 </p>
-                <button className="order-button">
+                <ButtonLink className="order-button" to="/orderonline">
                   Order a delivery <span>&rarr;</span>
-                </button>
+                </ButtonLink>
               </div>
               <div className="special-item">
                 <img src="./bruchetta.svg" alt="Bruschetta" />
@@ -81,9 +97,9 @@ function App() {
                   Our Bruschetta is made from grilled bread that has been
                   smeared with garlic and seasoned with salt and olive oil.
                 </p>
-                <button className="order-button">
+                <ButtonLink className="order-button" to="/orderonline">
                   Order a delivery <span>&rarr;</span>
-                </button>
+                </ButtonLink>
               </div>
               <div className="special-item">
                 <img src="./lemon dessert.jpg" alt="Lemon Dessert" width="349px" />
@@ -94,9 +110,9 @@ function App() {
                   ingredient has been sourced and is as authentic as can be
                   imagined.
                 </p>
-                <button className="order-button">
+                <ButtonLink className="order-button" to="/orderonline">
                   Order a delivery <span>&rarr;</span>
-                </button>
+                </ButtonLink>
               </div>
             </div>
           </section>
